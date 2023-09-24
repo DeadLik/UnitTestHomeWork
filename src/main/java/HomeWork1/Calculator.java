@@ -28,11 +28,20 @@ public class Calculator {
     }
 
     public static double calculatingDiscount(double purchaseAmount, int discountAmount) {
-        if (discountAmount < 0) {
-            throw new ArithmeticException("The discount amount cannot be negative");
-        }
 
-        double discount = purchaseAmount * discountAmount / 100;
-        return purchaseAmount - discount;
+        double discountedAmount = 0;
+
+        if (purchaseAmount >= 0) {
+
+            if (discountAmount >= 0 && discountAmount <= 100) {
+                discountedAmount = purchaseAmount - (purchaseAmount * discountAmount) / 100;
+            } else {
+                throw new ArithmeticException("Скидка должна быть в диапазоне от 0 до 100%");
+            }
+
+        } else {
+            throw new ArithmeticException("Сумма покупки не может быть отрицательной");
+        }
+        return discountedAmount;
     }
 }
