@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class EvenOddNumberTest {
+public class MethodsTests {
 
     // Задание 1. Напишите тесты, покрывающие на 100% метод evenOddNumber, который проверяет, является ли переданное число четным или нечетным
     Methods tester = new Methods();
